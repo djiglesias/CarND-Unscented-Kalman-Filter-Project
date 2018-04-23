@@ -1,6 +1,6 @@
 # Unscented Kalman Filter Project
 
-This project explores using an Unscented Kalman Filter to estimate the state of a moving object with noisy lidar and radar measurements. Using sensor fusion to merge incoming data from external sensors and a kalman filter to smooth the measurements from noise we can display the predicted state using the [Udacity Term 2 Simulator(https://github.com/udacity/self-driving-car-sim/releases).
+This project explores using an Unscented Kalman Filter to estimate the state of a moving object with noisy lidar and radar measurements. Using sensor fusion to merge incoming data from external sensors and a kalman filter to smooth the measurements from noise we can display the predicted state using the [Udacity Term 2 Simulator](https://github.com/udacity/self-driving-car-sim/releases).
 
 This project assumes that you have already downloaded and installed the Udacity simulator along with all the depenedencies. View the [install.md](https://github.com/djiglesias/CarND-Unscented-Kalman-Filter-Project/blob/master/install.md) to view how to compile this project using cmake and make.
 
@@ -59,12 +59,9 @@ Running the simulator with only radar data by ignoring data samples that are lab
 Running the simulator with both radar and laser data results in a much more accurate estimate of position for both position and velocity. The average RMSE for X/Y/VX/VY were 0.0974, 0.0855, 0.4517, 0.4404 respectively which satisfy the requirements for the project (0.11, 0.11, 0.52, 0.52).
 
 <p align="center">
- <img src="./images/data1_all.gif" width=350>
- <img src="./images/data1_all.gif" width=350>
+ <img src="./res/fusion_data_1.gif" width=300>
+ <img src="./res/fusion_data_2.gif" width=300>
 </p>
-
-
-
 
 ## 5. Recommendations for Future Work
 ...
