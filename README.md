@@ -42,25 +42,25 @@ The Tools::CalculateRMSE() function takes two vectors, estimation and ground tru
 
 ## 4. Running the Simulator
 ### 4.1 Laser Data Only
-Running the simulator with only laser data by ignoring data samples that are labelled as "RADAR". The resulting estimate of position and velocity is decent but the accuracy of the values are not enough to satisfy this project with average RMSE for X/Y/VX/VY were 0.1840, 0.1543, 0.6056, 0.4861 respectively.
+Running the simulator with only laser data by ignoring data samples that are labelled as "RADAR". The resulting estimate of position and velocity is decent but the accuracy of the values are not enough to satisfy this project with average RMSE for X/Y/VX/VY were 0.1740, 0.1480, 0.5839, 0.2601 respectively.
 
 <p align="center">
  <img src="./res/laser.gif" width=550>
 </p>
 
 ### 4.2 Radar Data Only
-Running the simulator with only radar data by ignoring data samples that are labelled as "LASER". The resulting estimate of position and velocity is decent but the accuracy of the values are not enough to satisfy this project with average RMSE for X/Y/VX/VY were 0.2318, 0.2985, 0.5943, 0.5848 respectively.
+Running the simulator with only radar data by ignoring data samples that are labelled as "LASER". The resulting estimate of position and velocity is decent but the accuracy of the values are not enough to satisfy this project with average RMSE for X/Y/VX/VY were 0.2187, 0.3055, 0.4976, 0.3582 respectively.
 
 <p align="center">
  <img src="./res/radar.gif" width=550>
 </p>
 
 ### 4.3 Sensor Fusion (Laser & Radar)
-Running the simulator with both radar and laser data results in a much more accurate estimate of position for both position and velocity. The average RMSE for X/Y/VX/VY were 0.0974, 0.0855, 0.4517, 0.4404 respectively which satisfy the requirements for the project (0.11, 0.11, 0.52, 0.52).
+Running the simulator with both radar and laser data results in a much more accurate estimate of position for both position and velocity. The average RMSE for X/Y/VX/VY were 0.0721, 0.0818, 0.3408, 0.2385 respectively which satisfy the requirements for the project (0.09, 0.10, 0.40, 0.30).
 
 <p align="center">
- <img src="./res/fusion_data_1.gif" width=300>
- <img src="./res/fusion_data_2.gif" width=300>
+ <img src="./res/fusion_data_1.gif" width=550>
+ <img src="./res/fusion_data_2.gif" width=550>
 </p>
 
 ## 5. Recommendations for Future Work
