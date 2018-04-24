@@ -288,12 +288,8 @@ void UKF::UpdateLidar(MeasurementPackage meas_package) {
   for (int i = 0; i < 2 * n_aug_ + 1; i++) {  //2n+1 simga points
 
     // extract values for better readibility
-    double p_x = Xsig_pred_(0,i);
-    double p_y = Xsig_pred_(1,i);
-
-    // measurement model
-    Zsig_(0,i) = p_x;       // position x
-    Zsig_(1,i) = p_y;       // position y
+    Zsig_(0,i) = Xsig_pred_(0,i);
+    Zsig_(1,i) = Xsig_pred_(1,i);
   }
 
   //mean predicted measurement

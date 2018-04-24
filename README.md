@@ -13,15 +13,10 @@ Similar to the [Extened Kalman Filter](https://github.com/djiglesias/CarND-Exten
 ### 1.2 Prediction
 Once initialized the filter can begin to work its magic. Upon receiving a new measurement the timestamp of the new data is compared to that of the previous state update and an estimate of the object's position is determined using the last known parameters. 
 
-.. explain sigma points.
-
 Augmented sigma points are generated for the predicted position to account for measurement noise in both directions of each degree of freedom. In the UKF class these are stored as the `Xsig_pred_` matrix which represents the predicted state sigma points. This step is independent of which sensor type the class receives in an update.
  
 ### 1.3 Update
-The 
-... measurement prediction
-... update state
-... 
+From the predicted object state and known noise an augmented data reading of the incoming sensor type is estimated and compared to the actual data. The two readings are weighted and averaged before updating the current object state.
 
 ## 2 Tools Class
 The Tools::CalculateRMSE() function takes two vectors, estimation and ground truth, as inputs and returns a vector of RMSE. For every entry in the vector a residual squared sum is totalled and then divided my the length of the vector. This is a parameter used for determining the quality of the algorithm on tracking the models position as it moves.
@@ -32,13 +27,12 @@ The Tools::CalculateRMSE() function takes two vectors, estimation and ground tru
 	$	rmse += residual;
 	$ }
 
-## 3. Tuning with NIS
+## 3. Tuning Parameters
+The initial variance values for acceleration and yaw rate were set too high (30 units) which caused the simulation to crash. Using the recommended values from the lessons as a starting point, Normalized Innovations Squared (NIS) provided an indication of whether the system is improving or not. As outlined in the lessons, we are looking for 95% of the error values to be less than 11.070 for an 11 degree of freedom system to be optimally tuned. Setting `std_a_` to 2.0 m/s^2 and `std_yawdd` to 0.4 rad/s^2 results in the following behaviour.
 
-- NIS (95%)
-- Noise innovation squared (NIS)
-- run a consistency check
-
-
+<p align="center">
+ <img src="./res/nis.png" width=550>
+</p>
 
 ## 4. Running the Simulator
 ### 4.1 Laser Data Only
@@ -62,7 +56,3 @@ Running the simulator with both radar and laser data results in a much more accu
  <img src="./res/fusion_data_1.gif" width=550>
  <img src="./res/fusion_data_2.gif" width=550>
 </p>
-
-## 5. Recommendations for Future Work
-...
-
