@@ -28,7 +28,7 @@ The Tools::CalculateRMSE() function takes two vectors, estimation and ground tru
 	$ }
 
 ## 3. Tuning Parameters
-The initial variance values for acceleration and yaw rate were set too high (30 units) which caused the simulation to crash. Using the recommended values from the lessons as a starting point, Normalized Innovations Squared (NIS) provided an indication of whether the system is improving or not. As outlined in the lessons, we are looking for 95% of the error values to be less than 11.070 for an 11 degree of freedom system to be optimally tuned. Setting `std_a_` to 2.0 m/s^2 and `std_yawdd` to 0.4 rad/s^2 results in the following behaviour.
+The initial variance values for acceleration and yaw rate were set too high (30 units) which caused the simulation to crash. Using the recommended values from the lessons as a starting point, Normalized Innovations Squared (NIS) provided an indication of whether the system is improving or not. As outlined in the lessons, we are looking for 95% of the error values to be less than 11.070 for an 5 degree of freedom system to be optimally tuned. Setting `std_a_` to 2.0 m/s^2 and `std_yawdd` to 0.4 rad/s^2 results in the following behaviour.
 
 <p align="center">
  <img src="./res/nis.png" width=550>
